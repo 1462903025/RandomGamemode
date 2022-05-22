@@ -1,15 +1,14 @@
-# RandomGamemode
- EXILED plugin for SCP:SL that has a configurable chance (10% by default) of activating a special gamemode when the round starts. Below is the current list of gamemodes.
- 
-# Current Gamemodes:
-- <u>Dodgeball:</u> Players spawn as either Class D, Scientist, or Guard, are given unlimited SCP-018s, and are teleported to below SCP-106's chamber for an arena-style battle.
-- <u>Peanut Raid:</u> All players spawn as SCP-173 besides 1 randomly chosen player, who spawns as a mini Class D and has to try to escape without being killed.
-- <u>Night of the Living Nerd:</u> All players spawn as Class D besides 1 randomly chosen player, who spawns as a Scientist with an LMG and 1000 clips of ammo. The facility lights are turned off for the entirety of the round and all players are given flashlights to help navigate. The Class Ds have to escape the facility, respawn as Chaos, and kill the Scientist before being killed themselves.
-- <u>SCP-682 Containment:</u> All players spawn as MTF Commander besides 1 randomly chosen player, who spawns as SCP-692 (a huge SCP-939 with 5000 HP). MTF must work together to hunt down and eliminate SCP-682.
-- <u>Randomizer:</u> Randomizes all player roles, spawns, and inventories. Only one SCP will spawn each round since they cannot attack each other.
+# 随机游戏模式
+SCP:SL的EXILED插件，在回合开始时有可配置的机会（默认为10%）激活特殊游戏模式。下面是当前游戏模式列表。
+#当前游戏模式：
+- <u>躲避球:</u>玩家以D级、科学家或保安的身份出生，获得不受限制的SCP-018，并被传送到SCP-106下方的房间进行竞技场式的战斗。
+- <u>花生危机：</u> 除了1名随机选择的玩家外，所有玩家都以SCP-173的身份生成，该玩家以迷你D级的身份生成，并且必须尝试在不被杀死的情况下逃跑。
+- <u>活死人之夜</u>除了1名随机选择的玩家外，其他玩家都是D级玩家，他是一名科学家，拥有机枪和1000枚弹药。在整轮比赛中，设施灯都会关闭，所有玩家都会得到手电筒来帮助导航。D级必须逃离该设施，重生为混沌，在被科学家杀之前杀死他。
+- <u>>SCP-682收容失效:</u>除了1名随机选择的玩家（SCP-692）（一个拥有5000血的巨大SCP-939）外，所有玩家都将成为MTF指挥官。MTF必须共同努力追捕并消灭SCP-682。
+- <u>随机发生器：</u> 随机化所有玩家角色、生成和库存。由于SCP不能相互攻击，因此每轮只能产生一个SCP。
 
-# Notes:
-- See your EXILED config for options to enable/disable specific gamemodes. (Make sure you run the server at least once with the plugin so the configs generate.)
+#注释:
+- 有关启用/禁用特定游戏模式的选项，请参阅EXILED配置。（确保使用插件运行服务器至少一次，以便配置生成。）
 
-# Issues & Pull Requests
- If you would like to contribute to this repository by creating an issue or pull request, please refer to the [contributing guidelines.](https://lambdagaming.github.io/contributing.html)
+# 提问的艺术
+如果您希望通过创建问题或请求来对此存储库作出贡献，请参阅[贡献指南](https://lambdagaming.github.io/contributing.html)
