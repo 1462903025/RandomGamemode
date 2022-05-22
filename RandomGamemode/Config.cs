@@ -5,40 +5,40 @@ namespace RandomGamemode
 {
 	public sealed class Config : IConfig
 	{
-		[Description( "Whether the plugin is enabled or not." )]
+		[Description("插件是否已启用。")]
 		public bool IsEnabled { get; set; } = true;
 
-		[Description( "Whether the Dodgeball gamemode is enabled or not." )]
+		[Description("是否启用躲避球游戏模式。")]
 		public bool DodgeBallEnabled { get; private set; } = true;
 
-		[Description( "Whether the Peanut Raid gamemode is enabled or not." )]
+		[Description("花生危机游戏模式是否启用。")]
 		public bool PeanutRaidEnabled { get; private set; } = true;
 
-		[Description( "Whether the Goldfish Attacks gamemode is enabled or not." )]
+		[Description("金鱼攻击游戏模式是否启用。")]
 		public bool GoldfishEnabled { get; private set; } = false;
 
-		[Description( "Whether the Night of the Living Nerd gamemode is enabled or not." )]
+		[Description("是否启用沉默的活死人之夜游戏模式。")]
 		public bool LivingNerdEnabled { get; private set; } = true;
 
-		[Description( "Whether the SCP-682 Containment gamemode is enabled or not." )]
+		[Description("是否启用SCP-682收容失效游戏模式。")]
 		public bool SCP682ContainmentEnabled { get; private set; } = true;
 
-		[Description( "Whether the Randomizer gamemode is enabled or not." )]
+		[Description("是否启用随机开始游戏模式。")]
 		public bool RandomizerEnabled { get; private set; } = true;
 
-		[Description( "Chance of a gamemode being activated at the start of every round. Must be a whole number." )]
+		[Description("每轮开始时激活游戏模式的几率。必须是整数。")]
 		public int GamemodeChance { get; private set; } = 10;
 
-		[Description( "Health that SCP-682 starts with for the SCP-682 Containment gamemode." )]
+		[Description("SCP-682收容失效游戏模式中SCP-682开局的血量。")]
 		public int SCP682Health { get; private set; } = 5000;
 
-		[Description( "Amount of ammo MTF units should get for the SCP-682 Containment gamemode." )]
+		[Description("SCP-682收容失效游戏模式下MTF单位应获得的弹药量。")]
 		public ushort SCP682MTFAmmo { get; private set; } = 1000;
 
-		[Description( "Max amount of dodgeballs that can be active in the world at once. Setting this too high will cause the server to hang." )]
+		[Description("在世界上激活的躲避球的最大数量。将此值设置得过高将导致服务器宕机。")]
 		public int MaxDodgeballs { get; private set; } = 20;
 
-		[Description( "Amount of ammo the scientist should get for the Night of the Living Nerd gamemode." )]
+		[Description("科学家在沉默的活死人之夜游戏模式应获得的弹药量。")]
 		public ushort NerdAmmoAmount { get; private set; } = 1000;
 	}
 }

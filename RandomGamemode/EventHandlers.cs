@@ -24,13 +24,13 @@ namespace RandomGamemode
 		{
 			switch ( CurrentGamemode )
 			{
-				case 1: return "Dodgeball";
-				case 2: return "Peanut Raid";
-				case 3: return "Goldfish Attacks"; // There's only like 10 people who might get this reference but I'm still adding it for the memes
-				case 4: return "Night of the Living Nerd";
-				case 5: return "SCP-682 Containment";
-				case 6: return "Randomizer";
-				default: return "Invalid Gamemode";
+				case 1: return "躲避球";
+				case 2: return "花生危机";
+				case 3: return "金鱼攻击"; // There's only like 10 people who might get this reference but I'm still adding it for the memes
+				case 4: return "沉默的活死人之夜";
+				case 5: return "SCP-682 收容失效";
+				case 6: return "随机";
+				default: return "无效的游戏模式";
 			}
 		}
 
@@ -49,7 +49,7 @@ namespace RandomGamemode
 					case 5: Timing.RunCoroutine( SCP682Containment() ); break;
 					case 6: Timing.RunCoroutine( Randomizer() ); break;
 				}
-				Map.Broadcast( 6, "<color=red>The " + GetGamemodeName() + " round has started!</color>" );
+				Map.Broadcast( 6, "<color=red>回合 " + GetGamemodeName() + " 已开始!</color>" );
 			}
 		}
 
