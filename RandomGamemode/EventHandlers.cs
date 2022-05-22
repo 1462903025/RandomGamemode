@@ -49,7 +49,7 @@ namespace RandomGamemode
 					case 5: Timing.RunCoroutine( SCP682Containment() ); break;
 					case 6: Timing.RunCoroutine( Randomizer() ); break;
 				}
-				Map.Broadcast( 6, "<color=red>回合 " + GetGamemodeName() + " 已开始!</color>" );
+				Map.Broadcast( 6, "<color=red>游戏模式： " + GetGamemodeName() + " 已开始!</color>" );
 			}
 		}
 
@@ -147,7 +147,7 @@ namespace RandomGamemode
 		public IEnumerator<float> GoldfishAttacks()
 		{
 			yield return Timing.WaitForSeconds( 3f );
-			string Name = "The Black Goldfish";
+			string Name = "黑金鱼";
 
 			foreach ( Player ply in Player.List )
 			{
@@ -317,7 +317,7 @@ namespace RandomGamemode
 		{
 			if ( CurrentGamemode > 0 )
 			{
-				Map.Broadcast( 6, "<color=red>The " + GetGamemodeName() + " round has ended.</color>" );
+				Map.Broadcast( 6, "<color=red>游戏模式： " + GetGamemodeName() + " 以开始</color>" );
 				CurrentGamemode = 0;
 				TotalBalls = 0;
 				ServerConsole.FriendlyFire = FriendlyFireDefault;
