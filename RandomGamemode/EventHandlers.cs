@@ -214,7 +214,7 @@ namespace RandomGamemode
 			Player Selected682 = PlyList[RandPly];
 			Selected682.SetRole( RoleType.Scp93953 );
 			yield return Timing.WaitForSeconds( 3f );
-			Selected682.Scale *= 1.75f; // Any larger and players are hard to kill due to hitbox issues
+			Selected682.Scale *= 1.2f; // Any larger and players are hard to kill due to hitbox issues
 			Selected682.MaxHealth = plugin.Config.SCP682Health;
 			Selected682.Health = plugin.Config.SCP682Health;
 			PlyList.RemoveAt( RandPly );
@@ -317,7 +317,7 @@ namespace RandomGamemode
 		{
 			if ( CurrentGamemode > 0 )
 			{
-				Map.Broadcast( 6, "<color=red>游戏模式： " + GetGamemodeName() + " 以开始</color>" );
+				Map.Broadcast( 6, "<color=red>游戏模式：" + GetGamemodeName() + " 以结束</color>" );
 				CurrentGamemode = 0;
 				TotalBalls = 0;
 				ServerConsole.FriendlyFire = FriendlyFireDefault;
