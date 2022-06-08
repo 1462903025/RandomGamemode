@@ -23,7 +23,7 @@ namespace RandomGamemode
 		[Description("是否启用SCP-682收容失效游戏模式。")]
 		public bool SCP682ContainmentEnabled { get; private set; } = true;
 
-		[Description("是否启用随机开始游戏模式。")]
+		[Description("是否启用混乱游戏模式。")]
 		public bool RandomizerEnabled { get; private set; } = true;
 
 		[Description("每轮开始时激活游戏模式的几率。必须是整数。")]

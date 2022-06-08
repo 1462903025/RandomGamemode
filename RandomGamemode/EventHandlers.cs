@@ -26,10 +26,10 @@ namespace RandomGamemode
 			{
 				case 1: return "躲避球";
 				case 2: return "花生危机";
-				case 3: return "金鱼攻击"; // There's only like 10 people who might get this reference but I'm still adding it for the memes
+				case 3: return "金鱼攻击"; // 大概只有10个人可能会得到这个参考资料，但我仍在为memes添加它
 				case 4: return "沉默的活死人之夜";
 				case 5: return "SCP-682 收容失效";
-				case 6: return "随机";
+				case 6: return "混乱";
 				default: return "无效的游戏模式";
 			}
 		}
@@ -198,7 +198,7 @@ namespace RandomGamemode
 			List<Player> PlyList = new List<Player>();
 			yield return Timing.WaitForSeconds( 3f );
 
-			if ( Player.List.Count() < 3 ) // The round ends too early if there's only 2 players
+			if ( Player.List.Count() < 3) // 如果只有两名玩家，这一轮就结束得太早了
 			{
 				CurrentGamemode = 0;
 				yield break;
@@ -214,7 +214,7 @@ namespace RandomGamemode
 			Player Selected682 = PlyList[RandPly];
 			Selected682.SetRole( RoleType.Scp93953 );
 			yield return Timing.WaitForSeconds( 3f );
-			Selected682.Scale *= 1.2f; // Any larger and players are hard to kill due to hitbox issues
+			Selected682.Scale *= 1.2f; // 任何更大的玩家都很难被击杀
 			Selected682.MaxHealth = plugin.Config.SCP682Health;
 			Selected682.Health = plugin.Config.SCP682Health;
 			PlyList.RemoveAt( RandPly );
@@ -230,8 +230,6 @@ namespace RandomGamemode
 		public IEnumerator<float> Randomizer()
 		{
 			List<Player> PlyList = new List<Player>();
-			FriendlyFireDefault = ServerConsole.FriendlyFire;
-			ServerConsole.FriendlyFire = true;
 			yield return Timing.WaitForSeconds( 3f );
 
 			RoleType[] roles = new RoleType[] {
@@ -244,7 +242,7 @@ namespace RandomGamemode
 				RoleType.Scp106, RoleType.Scp173, RoleType.Scp93953
 			};
 
-			// Set random SCP
+			// 设置随机SCP
 			foreach ( Player ply in Player.List )
 			{
 				PlyList.Add( ply );
@@ -257,7 +255,7 @@ namespace RandomGamemode
 			scp.SetRole( scps[rand.Next( scps.Length )] );
 			PlyList.RemoveAt( RandPly );
 
-			// Set random roles for the rest of the players
+			// 为其他玩家设置随机角色
 			foreach ( Player ply in PlyList )
 			{
 				ply.SetRole( roles[rand.Next( roles.Length )] );
@@ -265,7 +263,7 @@ namespace RandomGamemode
 
 			yield return Timing.WaitForSeconds( 1f );
 
-			// Set random spawns
+			// 设置随机繁殖
 			foreach ( Player ply in Player.List )
 			{
 				if ( ply.Role == RoleType.Scp0492 )
@@ -277,14 +275,14 @@ namespace RandomGamemode
 					Vector3 pos = RoleExtensions.GetRandomSpawnProperties( ( RoleType ) rand.Next( roles.Length ) ).Item1;
 					while ( pos == Vector3.zero || pos == RoleExtensions.GetRandomSpawnProperties( RoleType.Scp079 ).Item1 )
 					{
-						// Prevent players from spawning in areas they can't escape
+						// 防止玩家在无法逃离的区域繁殖
 						pos = RoleExtensions.GetRandomSpawnProperties( ( RoleType ) rand.Next( roles.Length ) ).Item1;
 					}
 					ply.Position = pos;
 				}
 			}
 
-			// Set random inventory items
+			// 设置随机库存项目
 			Array items = Enum.GetValues( typeof( ItemType ) );
 			foreach ( Player ply in Player.List )
 			{
@@ -297,7 +295,7 @@ namespace RandomGamemode
 			}
 		}
 
-		// Prevents randomizer round from ending if everyone is on the same team
+		// 如果每个人都在同一个团队中，则防止随机化器回合结束
 		public void OnRoundEnding( EndingRoundEventArgs ev )
 		{
 			int totalalive = 0;

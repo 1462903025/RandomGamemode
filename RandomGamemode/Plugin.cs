@@ -24,7 +24,7 @@ namespace RandomGamemode
 			events.Player.Joined += EventHandlers.OnPlayerJoin;
 			events.Server.EndingRound += EventHandlers.OnRoundEnding;
 
-			if ( Config.DodgeBallEnabled ) // This ensures that the chances of a gamemode being selected are still the same, even if some are disabled
+			if ( Config.DodgeBallEnabled) // 这确保了即使某些游戏模式被禁用，选择游戏模式的机会仍然相同
 				EnabledList.Add( 1 );
 
 			if ( Config.PeanutRaidEnabled )
