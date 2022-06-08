@@ -328,9 +328,9 @@ namespace RandomGamemode
 			for (int Plylist = 0; Plylist < Player.List.Count(); Plylist++)
 			{
 				if (Plylist % 2 == 0)
-					Player.List.ElementAt(Plylist).Role.Type = RoleType.ChaosConscript;
+					Player.List.ElementAt(Plylist).Role.Type = RoleType.ChaosMarauder;			
 				else
-					Player.List.ElementAt(Plylist).Role.Type = RoleType.NtfCaptain;
+					Player.List.ElementAt(Plylist).Role.Type = RoleType.NtfPrivate;
 			}
 		 }
 		public void OnRoundEnd( RoundEndedEventArgs ev )
