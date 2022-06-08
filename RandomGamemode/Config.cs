@@ -17,7 +17,7 @@ namespace RandomGamemode
 		[Description("金鱼攻击游戏模式是否启用。")]
 		public bool GoldfishEnabled { get; private set; } = false;
 
-		[Description("是否启用沉默的活死人之夜游戏模式。")]
+		[Description("是否启用活死人之夜游戏模式。")]
 		public bool LivingNerdEnabled { get; private set; } = true;
 
 		[Description("是否启用SCP-682收容失效游戏模式。")]
@@ -25,6 +25,9 @@ namespace RandomGamemode
 
 		[Description("是否启用混乱游戏模式。")]
 		public bool RandomizerEnabled { get; private set; } = true;
+
+		[Description("是否启用SCPGO游戏模式。")]
+		public bool SCPGOEnabled { get; private set; } = true;
 
 		[Description("每轮开始时激活游戏模式的几率。必须是整数。")]
 		public int GamemodeChance { get; private set; } = 10;

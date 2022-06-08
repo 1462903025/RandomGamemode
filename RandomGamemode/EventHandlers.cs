@@ -27,9 +27,10 @@ namespace RandomGamemode
 				case 1: return "躲避球";
 				case 2: return "花生危机";
 				case 3: return "金鱼攻击"; // 大概只有10个人可能会得到这个参考资料，但我仍在为memes添加它
-				case 4: return "沉默的活死人之夜";
+				case 4: return "活死人之夜";
 				case 5: return "SCP-682 收容失效";
 				case 6: return "混乱";
+				case 7: return "SCP:GO";
 				default: return "无效的游戏模式";
 			}
 		}
@@ -48,6 +49,7 @@ namespace RandomGamemode
 					case 4: Timing.RunCoroutine( NightOfTheLivingNerd() ); break;
 					case 5: Timing.RunCoroutine( SCP682Containment() ); break;
 					case 6: Timing.RunCoroutine( Randomizer() ); break;
+					case 7: Timing.RunCoroutine(SCPGO() ); break;
 				}
 				Map.Broadcast( 6, "<color=red>游戏模式： " + GetGamemodeName() + " 已开始!</color>" );
 			}
@@ -311,6 +313,26 @@ namespace RandomGamemode
 			}
 		}
 
+
+
+		public IEnumerator<float> SCPGO()
+         {
+			List<Player> PlyList = new List<Player>();
+			yield return Timing.WaitForSeconds(3f);
+
+			if (Player.List.Count() < 2) // 如果只有两名玩家则不会开始该模式
+			{
+				CurrentGamemode = 0;
+				yield break;
+			}
+			for (int Plylist = 0; Plylist < Player.List.Count(); Plylist++)
+			{
+				if (Plylist % 2 == 0)
+					Player.List.ElementAt(Plylist).Role.Type = RoleType.ChaosConscript;
+				else
+					Player.List.ElementAt(Plylist).Role.Type = RoleType.NtfCaptain;
+			}
+		 }
 		public void OnRoundEnd( RoundEndedEventArgs ev )
 		{
 			if ( CurrentGamemode > 0 )

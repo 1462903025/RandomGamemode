@@ -42,6 +42,9 @@ namespace RandomGamemode
 			if ( Config.RandomizerEnabled )
 				EnabledList.Add( 6 );
 
+			if ( Config.SCPGOEnabled )
+				EnabledList.Add( 7 );
+
 			Log.Info( "Successfully loaded." );
 		}
 
