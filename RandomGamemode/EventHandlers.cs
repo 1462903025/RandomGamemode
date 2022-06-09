@@ -240,7 +240,7 @@ namespace RandomGamemode
 			};
 
 			RoleType[] scps = new RoleType[] {
-				RoleType.Scp049, RoleType.Scp0492, RoleType.Scp096,
+				RoleType.Scp049, RoleType.Scp096,
 				RoleType.Scp106, RoleType.Scp173, RoleType.Scp93953
 			};
 
